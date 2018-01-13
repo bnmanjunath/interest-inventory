@@ -1,0 +1,21 @@
+<%= form_for :interest do |form| %>
+  <% #answers = Array.new %>
+  <table>
+    <tbody>
+      <th>
+        <tr>
+          <td><%= radio_button_tag "answers[]", 1 %></td>
+          <td><%= form.label "Never" %></td>
+          <td><%= radio_button_tag "answers[]", 2 %></td>
+          <td><%= form.label "Rarely" %></td>
+          <td><%= radio_button_tag "answers[]", 3 %></td>
+          <td><%= form.label "Sometimes" %></td>
+          <td><%= radio_button_tag "answers[]", 4 %></td>
+          <td><%= form.label "Frequently" %></td>
+          <td><%= radio_button_tag "answers[]", 5 %></td>
+          <td><%= form.label "Always" %></td>
+        </tr>
+      </th>
+    </tbody>
+  </table> 
+<% end %>

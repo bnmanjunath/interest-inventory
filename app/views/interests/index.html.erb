@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<center><h1>I tend to...</h1></center>
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interests.each do |interest| %>
+      <tr>
+        <td><%= interest.question %></td>
+        <td><%= render 'form', interest: @interest %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<div class="actions">
+  <%= button_to "Test", update_path, class: "btn btn-xs btn-success" %>
+</div>
+
+<br>
+
+<%= link_to('Logout', destroy_user_session_path, method: :delete) %> 
+
+<br>
+
+
