@@ -1,0 +1,43 @@
+<% @interest.each do |i| %>
+      <tr>
+        <td><%= i.question %></td>
+      </tr>
+    <% end %>
+
+
+
+<%= form_for[:interest, @interest]  do |f| %>
+  <% #answers = Array.new %>
+  <table>
+    <tbody>
+      <th>
+        <tr>
+          <td><%= @interest.question%></td>
+          <%= radio_button_tag(:answer, "1") %>
+          <%= label_tag(:answer, "Never") %>
+          <td><%= f.radio_button :answer, 'answer' %></td>
+          <td><%= f.label "Never", :value => '1'%></td>
+          <td><%= f.radio_button :answer, 'answer' %></td>
+          <td><%= f.label "Rarely", :value => '2' %></td>
+          <td><%= f.radio_button :answer, 'answer' %></td>
+          <td><%= f.label "Sometimes", :value => '3' %></td>
+          <td><%= f.radio_button :answer, 'answer'%></td>
+          <td><%= f.label "Frequently", :value => '4' %></td>
+          <td><%= f.radio_button :answer, 'answer'%></td>
+          <td><%= f.label "Always", :value => '5' %></td>
+        </tr>
+      </th>
+    </tbody>
+  </table> 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= render 'form', interest: @interest %>
+
+<%= link_to 'Show', @interest %> |
+<%= link_to 'Back', interests_path %>
+
+

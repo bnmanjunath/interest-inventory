@@ -1,0 +1,36 @@
+<h1>Editing Interest</h1>
+
+
+<%= form_for :interest, :url => update_all_answers_path, :html => { :method => :put } do %>
+  <table>
+    <tr>
+      <th>Question</th>
+      <th>Answer</th>
+    </tr>
+    <% @interests.each do |interest| %> 
+        <tr> 
+          <td>
+          <%= interest.id %> 
+          </td>
+          <td>    
+            <%= interest.question %> </td>
+          <td>
+            <%= radio_button_tag(:answer, "1") %>
+          </td>
+          <td>
+            <%= label_tag(:answer, "Never") %> 
+          </td>
+          <td>
+            <%= radio_button_tag(:answer, "2") %>
+          </td>
+          <td>
+            <%= label_tag(:answer, "Rarely") %> 
+          </td>
+       </tr>
+        <%end %>
+  </table>
+
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>

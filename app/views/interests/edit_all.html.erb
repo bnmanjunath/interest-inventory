@@ -1,5 +1,7 @@
+<h1>Editing Interest</h1>
 
-<%= form_tag interests_path  do %>
+
+<%= form_for :interest, :url => update_all_answers_path, :html => { :method => :put } do %>
   <table>
     <thead>
       <tr>
@@ -12,27 +14,26 @@
     </thead>
     <tbody>
       <% count_main = 1 %>
-      <% @interest.each do |i| %> 
-        <tr>
-          <td> <%= count_main %> </td>
+        <% @interests.each do |key,val| %>
+          <tr>
+          <td> <%= count_main %></td>
           <% count = 1 %>
           <% ["Never", "Rarely" ,"Sometimes"].each do |key1| %>
-            <% if count == i.answer %>
-              <td> <%= radio_button_tag(count_main, count, checked=true) %></td>
+            <% if count == 3 %>
+              <td> <%= radio_button_tag(count_main, count) %></td>
               <% else %>
               <td> <%= radio_button_tag(count_main , count) %></td>
               <% end %>
               <% count += 1 %>
           <% end %>
-          <td>
-          <%= i.question%>
-          </td>
-          <% count_main += 1 %>
-        <% end %>
-      </tr>
-        
+          <td> <%= key["question"] %></td>
+        </tr>
+        <% count_main += 1 %>
+      <% end %>
     </tbody>
+  </table>
 
-  </table> 
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
 <% end %>
-

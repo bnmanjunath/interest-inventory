@@ -19,7 +19,8 @@ development:
   host: localhost #tanf-devdb.state.ar.us
   database: interest_development
   username: postgres
-  password: nagashri1
+  password: Nagashri1
+  port: 5433
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -33,7 +34,8 @@ test:
   host: localhost #tanf-devdb.state.ar.us
   database: interest_test
   username: postgres
-  password: nagashri1
+  password: Nagashri1
+  port: 5433
 
 production:
   <<: *default
@@ -43,4 +45,5 @@ production:
   host: localhost #tanf-devdb.state.ar.us
   database: interest_production
   username: postgres
-  password: nagashri1
+  password: Nagashri1
+  port: 5433

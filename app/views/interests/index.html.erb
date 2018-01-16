@@ -2,7 +2,7 @@
 
 <center><h1>I tend to...</h1></center>
 <br>
-
+<div>
 <table>
   <thead>
     <tr>
@@ -11,25 +11,24 @@
   </thead>
 
   <tbody>
-    <% @interests.each do |interest| %>
-      <tr>
-        <td><%= interest.question %></td>
-        <td><%= render 'form', interest: @interest %></td>
-      </tr>
-    <% end %>
+      <%= render 'form', interest: @interest %>
   </tbody>
+</table>
+</div>
+  
+  <%= button_to "Test", interests_path(@interest), method: :edit, class: "btn btn-xs btn-success" %>
+
+
+<br>
+
+<%= link_to('Logout', destroy_user_session_path, method: :delete) %> 
+
 </table>
 
 <br>
 
 
-<div class="actions">
-  <%= button_to "Test", update_path, class: "btn btn-xs btn-success" %>
-</div>
 
-<br>
-
-<%= link_to('Logout', destroy_user_session_path, method: :delete) %> 
 
 <br>
 
